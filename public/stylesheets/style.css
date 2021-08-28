@@ -1,0 +1,25 @@
+
+.page-section{
+	min-height: 60vh;
+	margin: 3rem 0;
+}
+
+
+.section-title{
+	text-align: center;
+	border-bottom: 2px solid #c3c3c3;
+}
+
+.create-user-form{
+	border: 1px solid #c3c3c3;
+	padding: 2rem;
+}
+
+table th{
+	text-align: center;
+}
+
+
+.footer-container{
+	text-align: center;
+}

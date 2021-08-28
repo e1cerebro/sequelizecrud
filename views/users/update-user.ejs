@@ -1,0 +1,56 @@
+<%- include('../includes/header') %> 
+	<section class="page-section">
+		<div class='container'>
+			<div class='row'>
+				<div class='col-12'>
+					<div class="row justify-content-center">
+						<div class="col-md-5 create-user-form">
+							<h2 class="section-title"><%= title %></h2>
+							<form action="/users/create" method="POST">
+								<div class="mb-3">
+									<label for="name" class="form-label">Name</label>
+									<input type="text" class="form-control" id="name" aria-describedby="name">
+								</div>
+	
+								<div class="mb-3">
+									<label for="number" class="form-label">Age</label>
+									<input type="text" class="form-control" id="name" aria-describedby="name">
+								</div>
+								
+								<div class="mb-3">
+									<label for="department" class="form-label">Department</label>
+									<select class="form-select" name="department" aria-label="User Department">
+										<option value="Accounting">Accounting</option>
+										<option value="Engineering">Engineering</option>
+										<option value="Management">Management</option>
+										<option value="Security">Security</option>
+									</select>
+								</div>
+								
+								<div class="mb-3">
+									<label for="role" class="form-label">Role</label>
+									<select class="form-select" name="role" aria-label="User role">
+										<option value="PM">PM</option>
+										<option value="QA">QA</option>
+										<option value="DEV">DEV</option>
+									</select>
+								</div>
+								
+								<div class="mb-3">
+									<label for="status" class="form-label">Status</label>
+									<select class="form-select" name="status" aria-label="User role">
+										<option value="Activated">Activated</option>
+										<option value="Pending">Pending</option>
+										<option value="Cancelled">Cancelled</option>
+									</select>
+								</div>
+		
+								<button type="submit" class="btn btn-primary">Update User</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<%- include('../includes/footer') %> 
