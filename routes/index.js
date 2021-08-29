@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+/* HANDLES A GET REQUEST: homepage url */
+router.get('/', function(request, response) {
+	response.render('index', { title: 'Blackforce CRUD Nodejs Training' });
 });
 
 module.exports = router;
