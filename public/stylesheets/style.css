@@ -1,13 +1,19 @@
 
 .page-section{
 	min-height: 60vh;
-	margin: 3rem 0;
+	padding: 4rem 1rem;
 }
-
+a.nav-link.active.create-user {
+    color: sandybrown !important;
+}
 
 .section-title{
 	text-align: center;
-	border-bottom: 2px solid #c3c3c3;
+	color: #fff;
+	border-bottom: 8px solid sandybrown;
+	padding: 1.5rem;
+    background: #212529;
+    margin-bottom: 2rem;
 }
 
 .create-user-form{
@@ -22,4 +28,8 @@ table th{
 
 .footer-container{
 	text-align: center;
+}
+
+.user-info:not(:last-child){
+	margin-bottom: 0.5rem;
 }

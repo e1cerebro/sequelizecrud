@@ -1,12 +1,39 @@
 <%- include('../includes/header') %> 
+<section class="page-section">
 	<div class='container'>
 		<div class='row'>
 			<div class='col-12'>
-
+				<h2 class="section-title"><%= user.name %></h2>
+				<div class="row justify-content-center">
+					<% if(user) {%>
+						<div class="col-md-8 mb-3">
+							<div class="card" style="min-width: 18rem;">
+								<div class="card-body">
+									<h5 class="card-title"><i class="fas fa-user"></i> <%= user.name %></h5>
+									<hr>
+									<div class="age user-info"><strong>Age:</strong> <%= user.age %></div>
+									<div class="department user-info"><strong>Department:</strong> <%= user.department %></div>
+									<div class="role user-info"><strong>Role:</strong> <%= user.role %></div>
+									<div class="status user-info"><strong>Status:</strong> <%= user.status %></div>
+									<div class="created-at user-info"><strong>Created On:</strong> <%= moment(user.createdAt ).format('LLLL') %></div>
+									<div class="action">
+										<a href="/users/update/show/<%= user.id %>" type="button" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Edit</a>
+										<a href="/users/delete/<%= user.id %>" type="button" onclick="return confirm('Do you want to delete USER_NAME?');" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Delete</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					<% } %>
+				</div>
 			</div>
 		</div>
 	</div>
+</section>
 <%- include('../includes/footer') %> 
+
+
+
+
 
 
 

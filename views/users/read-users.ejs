@@ -1,59 +1,33 @@
 <%- include('../includes/header') %> 
+
 <section class="page-section">
 	<div class='container'>
-		<div class='row'>
+		<div class='row justify-content-center'>
 			<div class='col-12'>
-				<div class="row justify-content-center">
-					<div class="col-md-8">
-						<h2 class="section-title"><%= title %></h2>
-
-						<table class="table table-striped table-bordered">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Name</th>
-									<th scope="col">Age</th>
-									<th scope="col">Department</th>
-									<th scope="col">Role</th>
-									<th scope="col">Status</th>
-									<th scope="col">Created Date</th>
-									<th colspan="2" scope="col">Actions</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">1</th>
-									<td>John Doe</td>
-									<td>12</td>
-									<td>Accounting</td>
-									<td>PM</td>
-									<td>Activated</td>
-									<td>2021-08-12</td>
-									<td>
-										<a href="/users/update/1" type="button" class="btn btn-sm btn-primary">Edit</a>
-									</td>
-									<td>
-										<a href="/users/delete/1" type="button" onclick="return confirm('Do you want to delete USER_NAME?');" class="btn btn-sm btn-danger">Delete</a>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row">2</th>
-									<td>John Doe</td>
-									<td>12</td>
-									<td>Accounting</td>
-									<td>PM</td>
-									<td>Activated</td>
-									<td>2021-08-12</td>
-									<td>
-										<a href="/users/update/1" type="button" class="btn btn-sm btn-primary">Edit</a>
-									</td>
-									<td>
-										<a href="/users/delete/1" type="button" onclick="return confirm('Do you want to delete USER_NAME?');" class="btn btn-sm btn-danger">Delete</a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+				<h2 class="section-title"><%= title %></h2>
+				<div class="row">
+					<% if(users) {%>
+						<% users.forEach((user, index) =>{ %>
+							<div class="col-md-3 mb-3">
+								<div class="card" style="min-width: 18rem;">
+									<div class="card-body">
+										<h5 class="card-title"><i class="fas fa-user"></i> <%= user.name %></h5>
+										<hr>
+										<div class="age user-info"><strong>Age:</strong> <%= user.age %></div>
+										<div class="department user-info"><strong>Department:</strong> <%= user.department %></div>
+										<div class="role user-info"><strong>Role:</strong> <%= user.role %></div>
+										<div class="status user-info"><strong>Status:</strong> <%= user.status %></div>
+										<div class="created-at user-info"><strong>Created On:</strong> <%= moment(user.createdAt ).format('LLLL') %></div>
+										<div class="action">
+											<a href="/users/view/<%= user.id %>" type="button" class="btn btn-sm btn-success"><i class="fas fa-eye"></i> View</a>
+											<a href="/users/update/show/<%= user.id %>" type="button" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Edit</a>
+											<a href="/users/delete/<%= user.id %>" type="button" onclick="return confirm('Do you want to delete USER_NAME?');" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Delete</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						<% }) %> 
+					<% } %>
 				</div>
 			</div>
 		</div>
